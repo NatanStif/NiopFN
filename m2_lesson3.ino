@@ -6,10 +6,10 @@
 #define SHORT_DELAY_TIME 30
 
 #define speedPinR 9           //  Front Wheel PWM pin connect Model-Y M_B ENA
-#define RightMotorDirPin1 24  //Front Right Motor direction pin 1 to Model-Y M_B IN1  (K1)
-#define RightMotorDirPin2 22  //Front Right Motor direction pin 2 to Model-Y M_B IN2   (K1)
-#define LeftMotorDirPin1 28   //Front Left Motor direction pin 1 to Model-Y M_B IN3 (K3)
-#define LeftMotorDirPin2 26   //Front Left Motor direction pin 2 to Model-Y M_B IN4 (K3)
+#define RightMotorDirPin1 28  //Front Right Motor direction pin 1 to Model-Y M_B IN1  (K1)
+#define RightMotorDirPin2 30  //Front Right Motor direction pin 2 to Model-Y M_B IN2   (K1)
+#define LeftMotorDirPin1 26   //Front Left Motor direction pin 1 to Model-Y M_B IN3 (K3)
+#define LeftMotorDirPin2 24   //Front Left Motor direction pin 2 to Model-Y M_B IN4 (K3)
 #define speedPinL 10          //  Front Wheel PWM pin connect Model-Y M_B ENB
 
 #define speedPinRB 11         //  Rear Wheel PWM pin connect Left Model-Y M_A ENA
@@ -218,7 +218,6 @@ void tracking() {
   Serial.print("\t");
 
    
-/*
   if (senstr == "10000" || senstr == "01000" || senstr == "11000") {
     Serial.println(" Shift Left");
     sharpLeftTurn(LOW_SPEED, MID_SPEED);
@@ -287,5 +286,5 @@ void tracking() {
   else {
     brojac = 0;
   }
-  */
+
 }
