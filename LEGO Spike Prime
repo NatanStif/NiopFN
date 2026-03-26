@@ -1,0 +1,88 @@
+
+import random
+import time
+import color
+from hub import light
+from hub import light_matrix
+import motor
+from hub import port
+from app import music
+
+
+def naprijed(rotacija,brzina,vrijeme):
+    for i in range(vrijeme):
+        motor.run_for_degrees(port.A, -rotacija, brzina)
+        motor.run_for_degrees(port.E, rotacija, brzina)
+        time.sleep_ms(100)
+
+def nazad(rotacija,brzina,vrijeme):
+    for i in range(vrijeme):
+        motor.run_for_degrees(port.A, rotacija, brzina)
+        motor.run_for_degrees(port.E, -rotacija, brzina)
+        time.sleep_ms(100)
+
+def malo_livo(rotacija,brzina,vrijeme):
+    for i in range(vrijeme):
+        motor.run_for_degrees(port.E, rotacija, brzina)
+        time.sleep_ms(100)
+
+def naglo_livo(rotacija,brzina,vrijeme):
+    for i in range(vrijeme):
+        motor.run_for_degrees(port.E, rotacija, brzina)
+        motor.run_for_degrees(port.A, rotacija, brzina)
+        time.sleep_ms(100)
+
+def malo_desno(rotacija,brzina,vrijeme):
+    for i in range(vrijeme):
+        motor.run_for_degrees(port.A, -rotacija, brzina)
+        time.sleep_ms(100)
+
+def naglo_desno(rotacija,brzina,vrijeme):
+    for i in range(vrijeme):
+        motor.run_for_degrees(port.A, -rotacija, brzina)
+        motor.run_for_degrees(port.E, -rotacija, brzina)
+        time.sleep_ms(100)
+
+def nazad_malo_livo(rotacija,brzina,vrijeme):
+    for i in range(vrijeme):
+        motor.run_for_degrees(port.E, -rotacija, brzina)
+        time.sleep_ms(100)
+
+def nazad_malo_desno(rotacija,brzina,vrijeme):
+    for i in range(vrijeme):
+        motor.run_for_degrees(port.A, rotacija, brzina)
+        time.sleep_ms(100)
+
+def prst_gore(rotacija,brzina,vrijeme):
+    for i in range(vrijeme):
+        motor.run_for_degrees(port.D, rotacija, brzina)
+        time.sleep_ms(100)
+
+def prst_dole(rotacija,brzina,vrijeme):
+    for i in range(vrijeme):
+        motor.run_for_degrees(port.D, -rotacija, brzina)
+        time.sleep_ms(100)
+
+def rep_gore(rotacija,brzina,vrijeme):
+    for i in range(vrijeme):
+        motor.run_for_degrees(port.C, rotacija, brzina)
+        time.sleep_ms(100)
+
+def rep_dole(rotacija,brzina,vrijeme):
+    for i in range(vrijeme):
+        motor.run_for_degrees(port.C, -rotacija, brzina)
+        time.sleep_ms(100)
+
+naprijed(45,700,14)
+naglo_livo(45,300,5)
+nazad(45,700,21)
+rep_dole(45,500,5)
+naprijed(45,720,10)
+naglo_desno(45,500,5)
+naprijed(45,500,5)
+rep_gore(45,500,5)
+
+
+
+
+
